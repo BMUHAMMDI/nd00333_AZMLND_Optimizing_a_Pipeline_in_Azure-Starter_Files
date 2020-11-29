@@ -7,6 +7,7 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 import pandas as pd
+from azureml.core import Dataset
 from azureml.core.run import Run
 from azureml.data.dataset_factory import TabularDatasetFactory
 
@@ -15,12 +16,7 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 
 web_path='https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv'
 
-ds = Dataset.Tabular.from.delimited_files(path=web_path)
-x, y = clean_data(ds)
-
-# TODO: Split data into train and test sets.
-
-x_train, x_test, y_train, y_test=train_test_split(x, y, random_state=0)
+ds = Dataset.Tabular.from_delimited_files(path=web_path)
 
 run = Run.get_context()
 
@@ -49,7 +45,12 @@ def clean_data(data):
     x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
 
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
-    return x_df and y_df
+    return x_df , y_df
+
+
+x, y = clean_data(ds)
+# TODO: Split data into train and test sets.
+x_train, x_test, y_train, y_test=train_test_split(x, y)
 
 def main():
     # Add arguments to script
