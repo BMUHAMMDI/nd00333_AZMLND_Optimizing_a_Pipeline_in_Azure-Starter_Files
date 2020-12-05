@@ -14,7 +14,7 @@ The best performing model on the data using Azure's AutoML turned out to be Voti
 
 ## Scikit-learn Pipeline
 
-**Steps involved in the entry script(train.py):
+** Steps involved in the entry script(train.py):
 1.	Creation of TabularDataset using TabularDatasetFactory.
 [Find dataset here](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) 
 2.	Cleaning the data - removing rows with missing entries, one hot encoding the categorical data, feature engineering etc.
@@ -22,7 +22,7 @@ The best performing model on the data using Azure's AutoML turned out to be Voti
 4.	Training the logistic regression model using arguments from the HyperDrive runs.
 5.	Calculating the accuracy score.
 
-**Steps involved in the project notebook(udacity-project.ipynb): 
+** Steps involved in the project notebook(udacity-project.ipynb): 
 1.	Assigning a compute cluster to be used as the target.
 2.	Specifying the parameter sampler(RandomParameterSampling in this project).
 3.	Specifying an early termination policy(BanditPolicy in this project).
