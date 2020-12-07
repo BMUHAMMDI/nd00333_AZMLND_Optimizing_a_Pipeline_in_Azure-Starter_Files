@@ -24,16 +24,16 @@ The best performing model on the data using Azure's AutoML turned out to be Voti
 
 ** Steps involved in the project notebook(udacity-project.ipynb): 
 1.	Assigning a compute cluster to be used as the target.
-2.	Specifying the parameter sampler(RandomParameterSampling in this project).
-3.	Specifying an early termination policy(BanditPolicy in this project).
-4.	Creating a SKLearn estimator for use with train.py.
+2.	Specifying the parameter sampler(RandomParameterSampling - it'll be passed later by hyperDrive).
+3.	Specifying an early termination policy(BanditPolicy - it'll be passed later by hyperDrive).
+4.	Creating a SKLearn estimator for use with train.py (using SKlearn object and pass the following parameters: source_directory, entry_script and compute_target details)
 5.	Creating a HyperDriveConfig using the estimator, hyperparameter sampler, and policy.
 6.	Submitting the hyperdrive run to the experiment and showing run details with the widget.
 7.	Getting the best run id and saving the model from that run.
 8.	Saving the model under the workspace for deployment.
 9.	Creation of TabularDataset using TabularDatasetFactory from the provided URL in the notebook
 10.	Splitting the data into train and test sets.
-11.	Set up AutoML configuration
+11.	Set up AutoML configuration with list of parameters: task, primary_metric,training_data,label_column_name,n_cross_validations and (enable_onnx_compatible_models - to export the best model later).
 12.	Submit the AutoML run and save the best model
 
 
