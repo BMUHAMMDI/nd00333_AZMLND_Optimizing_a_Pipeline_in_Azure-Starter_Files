@@ -50,6 +50,6 @@ Since it was a classification task, the primary metric that was to be maximized 
 Though both the models used automated machine learning somehow, a slight difference in the accuracies was visible, with model trained using AutoML gave slightly better results. The AutoML model gave best accuracy of 0.9164 with VotingEnsembleClassifier, while the model built using SKLearn and HyperDrive gave a slightly lower score of 0.911.The SKlearn model was iterated 12 times and it took 17 minutes to complete the job, while the AutoML model was iterated only 5 times within two minutes only. 
 
 ## Future work
-Improving the training data might give better results. We can also tune some other hyperparameters used in the model and use the pipelines suggested by the AutoML models in order to achieve better results in the future. Using different parameter sampling techniques and tuning the arguments of the BanditPolicy can also prove fruitful.
+Improving the training data might give better results such us removing the class imbalance that we have in coulmn 'Y' where the number of yes(1) is very low in comparison to no(0). We can also tune some other hyperparameters used in the model and use the pipelines suggested by the AutoML models in order to achieve better results in the future. Using different parameter sampling techniques and tuning the arguments of the BanditPolicy can also prove fruitful.
 
 
