@@ -24,7 +24,7 @@ The best performing model on the data using Azure's AutoML turned out to be Voti
 
 ** Steps involved in the project notebook(udacity-project.ipynb): 
 1.	Assigning a compute cluster to be used as the target.
-2.	Specifying the parameter sampler(RandomParameterSampling - it'll be passed later by hyperDrive).
+2.	Specifying the parameter sampler(we'll define the hyperparameter space using RandomParameterSampling method and tune C and max_iter parameters. We will use random sampling (choice) to try different sets of hyperparameters to maximize our primary metric, Accuracy.)
 3.	Specifying an early termination policy(BanditPolicy - it'll be passed later by hyperDrive).
 4.	Creating a SKLearn estimator for use with train.py (using SKlearn object and pass the following parameters: source_directory, entry_script and compute_target details)
 5.	Creating a HyperDriveConfig using the estimator, hyperparameter sampler, and policy.
